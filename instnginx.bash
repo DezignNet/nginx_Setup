@@ -39,7 +39,16 @@ case "$thisDist" in
    ;;
 
    CentOS*|RedHat*)
+      # copy the repo file and edit appropriately
+      cp ./nginx.repo /etc/yum.repos.d/
 
+      if [ "$thisDist" = "CentOS" ]; then
+         thisOS="centos"
+      else
+         thisOS="rhel"
+      fi
+
+      sed
    ;;
 
    *)
